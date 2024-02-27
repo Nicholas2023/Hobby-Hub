@@ -1,7 +1,8 @@
-from multiselectfield import MultiSelectField
 from django.forms import ModelForm
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from multiselectfield import MultiSelectField
+from django.core.validators import MaxValueValidator
 from django import forms
 from datetime import date
 
@@ -24,10 +25,10 @@ class UserProfile(models.Model):
         ('not sure', 'NOT SURE'),
     ]
     
-    seeking = MultiSelectField(choices=SEEK_CHOICES, default='romantic relationship')
+    seeking = MultiSelectField(choices=SEEK_CHOICES, default=('romantic relationship',), validators=[MaxValueValidator(3)])
     username = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_profiles')
     location = models.CharField(max_length=99, null=True)
-    hobbies = MultiSelectField(choices=HOBBY_CHOICES, default="reading")
+    hobbies = MultiSelectField(choices=HOBBY_CHOICES, default=('reading',), validators=[MaxValueValidator(3)])
     gender = models.CharField(max_length=65, default='female')
     bio = models.CharField(max_length=300)
     age = models.IntegerField(null=False)
