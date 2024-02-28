@@ -9,7 +9,6 @@ from .models import User, UserProfile, ProfileForm, Message
 from .forms import *
 from django.views.decorators.csrf import csrf_exempt
 import json
-from django.views import View
 
 
 def index(request):
