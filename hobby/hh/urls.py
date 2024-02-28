@@ -15,5 +15,5 @@ urlpatterns = [
     path("mailbox/<str:mailbox>", views.mailbox, name="mailbox"),
     path("messages", views.messages, name="messages"),
     path("match", views.match, name="match"),
-    path("register", views.register, name="register"),
+    path("register", views.register, name="register")
 ]
