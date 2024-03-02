@@ -64,6 +64,7 @@ def register(request):
 
 @login_required
 def profile(request):
+    '''Display user profile.'''
     user_profile = UserProfile.objects.filter(username=request.user).all()
     return render(request, "hh/profile.html", {"items": user_profile})
 
