@@ -15,6 +15,7 @@ def index(request):
     return render(request, "hh/index.html")
 
 def login_view(request):
+    '''Log user in.'''
     if request.method == "POST":
         # Attempt to sign the user in
         username = request.POST["username"]
