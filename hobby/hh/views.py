@@ -33,6 +33,7 @@ def login_view(request):
         return render(request, "hh/login.html")
 
 def logout_view(request):
+    '''Log user out.'''
     logout(request)
     return HttpResponseRedirect(reverse("index"))
 
