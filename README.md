@@ -83,6 +83,7 @@ git push origin feature/your-feature
 
 4. Create a pull request detailing your changes.
 
-## License
+## Authors
+[Mitchell Maina](https://github.com/mitchellshera)
+[Nicholas Otieno](https://github.com/Nicholas2023)
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
